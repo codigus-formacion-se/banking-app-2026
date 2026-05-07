@@ -35,6 +35,7 @@ public class WebSecurityConfig {
                         .requestMatchers("/dashboard/**", "/transfer/**").hasRole("CUSTOMER")
                         .requestMatchers("/loan/request/**").hasRole("CUSTOMER")
                         .requestMatchers("/loan/manage/**").hasRole("MANAGER")
+                        .requestMatchers("/").permitAll()
                         .anyRequest().authenticated())
                 .formLogin(form -> form
                         .loginPage("/login")
